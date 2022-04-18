@@ -18,3 +18,15 @@ Route::get('/', function () {
         'title' => 'Home'
     ]);
 });
+
+Route::get('/kamar', function () {
+    return view('kamar', [
+        'title' => 'Kamar'
+    ]);
+});
+
+Route::get('/fasilitas', function () {
+    return view('fasilitas', [
+        'title' => 'Fasilitas'
+    ]);
+});

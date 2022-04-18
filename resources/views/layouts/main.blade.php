@@ -22,7 +22,7 @@
 
     @include('partials.header')
 
-    <div class="container">
+    <div class="container mb-5">
         @yield('container')
     </div>
 

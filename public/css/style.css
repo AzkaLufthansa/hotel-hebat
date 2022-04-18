@@ -1,0 +1,25 @@
+/* .carousel .carousel-item {
+    height: 350px;
+    background-size: cover;
+    background-position: 0 -200px;
+  } */
+
+  .hero {
+      height: 350px;
+      background-image: url('/img/hotel.jpg');
+      background-size: cover;
+  }
+
+  .kamar-superior {
+      height: 350px;
+      background-image: url('/img/kamar-superior.jpg');
+      background-size: cover;
+      background-position: 0 -200px;
+  }
+
+  .kamar-deluxe {
+      height: 350px;
+      background-image: url('/img/kamar-deluxe.jpg');
+      background-size: cover;
+      background-position: 0 -200px;
+  }

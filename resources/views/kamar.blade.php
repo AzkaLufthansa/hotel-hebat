@@ -11,9 +11,7 @@
         <li>AC</li>
     </ul>
     
-    <div class="container mt-4 mb-5 p-5 border">
-        
-    </div>
+    <div class="kamar-superior border border-dark mb-5"></div>
     
     <h2>Tipe Deluxe</h2>
     <p>Fasilitas : </p>
@@ -26,7 +24,7 @@
         <li>AC</li>
     </ul>
     
-    <div class="container mt-4 mb-5 p-5 border">
+    <div class="kamar-deluxe border border-dark mb-5">
         
     </div>
 @endsection

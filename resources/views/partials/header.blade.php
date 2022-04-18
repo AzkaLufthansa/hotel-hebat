@@ -15,7 +15,32 @@
         </ul>
     </div>
 
-    <div class="container mt-4 mb-5 p-5 border">
-     
-    </div>
+    <div class="hero mt-4 mb-5 border border-dark"></div>
+
+    {{-- <div id="carouselExampleControls" class="carousel slide mt-4 mb-5 border border-dark border-1" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/img/hotel.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/hotel4.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/hotel5.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div> --}}
 </header>

@@ -7,7 +7,7 @@
 
             <div class="col-md-3">
                 <div class="input-group date" id="datepicker">
-                    <input type="text" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror" autocomplete="off">
+                    <input type="text" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror" autocomplete="off" placeholder="Tanggal Cek In">
                     <span class="input-group-append">
                         <span class="input-group-text bg-white d-block">
                             <i class="fa fa-calendar"></i>
@@ -23,7 +23,7 @@
     
             <div class="col-md-3">
                 <div class="input-group date" id="datepicker">
-                    <input type="text" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror" autocomplete="off">
+                    <input type="text" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror" autocomplete="off" placeholder="Tanggal Cek Out"
                     <span class="input-group-append">
                         <span class="input-group-text bg-white d-block">
                             <i class="fa fa-calendar"></i>
@@ -39,7 +39,7 @@
 
             <div class="col-md-2">
                 <div class="input-group">
-                    <input type="text" id="lokasi" name="lokasi" class="form-control @error('lokasi') is-invalid @enderror" aria-describedby="passwordHelpInline">
+                    <input type="text" id="lokasi" name="lokasi" class="form-control @error('lokasi') is-invalid @enderror" aria-describedby="passwordHelpInline" placeholder="Jumlah Kamar">
                     @error('lokasi')
                         <div class="invalid-feedback">
                         {{ $message }}

@@ -1,11 +1,11 @@
 @extends('layouts.main')
 
 @section('container')
-    <h2 class="mb-4">Fasilitas</h2>
+<h2 class="mb-4">Fasilitas</h2>
 
-    <div class="row">
-        <div class="cotainer p-5 col-md-4 border"></div>
-        <div class="cotainer p-5 col-md-4 border"></div>
-        <div class="cotainer p-5 col-md-4 border"></div>
+<div class="row justify-content-center">
+        <div class="fasilitas fasilitas-1 me-5 col-md border border-dark"></div>
+        <div class="fasilitas fasilitas-2 me-5 col-md border border-dark"></div>
+        <div class="fasilitas fasilitas-3 me-5 col-md border border-dark"></div>
     </div>
 @endsection

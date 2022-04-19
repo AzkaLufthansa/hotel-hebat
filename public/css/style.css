@@ -23,3 +23,23 @@
       background-size: cover;
       background-position: 0 -200px;
   }
+
+  .fasilitas {
+      width: 300px;
+      height: 200px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      /* background-position: -30px -200px; */
+  }
+
+  .fasilitas-1 {
+      background-image: url('/img/kolam-renang.jpg');
+  }
+
+  .fasilitas-2 {
+      background-image: url('/img/restoran.jpg');
+  }
+
+  .fasilitas-3 {
+      background-image: url('/img/bathtub.jpg');
+  }

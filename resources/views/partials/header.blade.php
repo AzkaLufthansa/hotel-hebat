@@ -1,7 +1,8 @@
 <header class="container my-5">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center">
         <h1>Hotel Hebat</h1>
-    
+        
+        {{-- Navigation Bar --}}
         <ul class="nav justify-content-end">
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('/') ? 'disabled text-decoration-underline' : '' }}" aria-current="page" href="/">Home</a>
@@ -15,7 +16,7 @@
         </ul>
     </div>
 
-    {{-- <div class="hero mt-4 border border-dark"></div> --}}
+    {{-- Hero Image --}}
     <div class="hero mt-4 border border-dark">
         <img src="/img/hotel.jpg" alt="Hotel Hebat">
     </div>

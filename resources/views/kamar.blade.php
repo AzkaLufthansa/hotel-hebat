@@ -11,7 +11,9 @@
         <li>AC</li>
     </ul>
     
-    <div class="kamar-superior border border-dark mb-5"></div>
+    <div class="kamar border border-dark mb-5">
+        <img src="/img/kamar-superior.jpg" alt="Kamar Superior">
+    </div>
     
     <h2>Tipe Deluxe</h2>
     <p>Fasilitas : </p>
@@ -24,7 +26,7 @@
         <li>AC</li>
     </ul>
     
-    <div class="kamar-deluxe border border-dark mb-5">
-        
+    <div class="kamar border border-dark">
+        <img src="/img/kamar-deluxe.jpg" alt="Kamar Deluxe">
     </div>
 @endsection

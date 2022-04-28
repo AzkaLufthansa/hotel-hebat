@@ -9,6 +9,15 @@
 }
 
 
+.kamar { height: 350px; }
+
+.kamar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 50%;   
+}
+
 .kamar-superior {
     height: 350px;
     background-image: url('/img/kamar-superior.jpg');

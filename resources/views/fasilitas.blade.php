@@ -3,9 +3,9 @@
 @section('container')
 <h2 class="mb-4">Fasilitas</h2>
 
-<div class="row justify-content-center">
-        <div class="fasilitas fasilitas-1 me-5 col-md border border-dark"></div>
-        <div class="fasilitas fasilitas-2 me-5 col-md border border-dark"></div>
-        <div class="fasilitas fasilitas-3 me-5 col-md border border-dark"></div>
-    </div>
+<div class="fasilitas row g-0 justify-content-between">
+    <img src="/img/kolam-renang.jpg" alt="Kolam Renang" class="border border-dark">
+    <img src="/img/restoran.jpg" alt="Restoran" class="border border-dark">
+    <img src="/img/bathtub.jpg" alt="Bathtub" class="border border-dark">
+</div>
 @endsection

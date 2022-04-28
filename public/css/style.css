@@ -1,4 +1,4 @@
-/* Hero Image */
+/* Gambar Hero */
 .hero { height:350px; }
 
 .hero img {
@@ -8,7 +8,7 @@
     object-position: 0 25%;
 }
 
-
+/* Gambar Kamar */
 .kamar { height: 350px; }
 
 .kamar img {
@@ -18,35 +18,8 @@
     object-position: 0 50%;   
 }
 
-.kamar-superior {
-    height: 350px;
-    background-image: url('/img/kamar-superior.jpg');
-    background-size: cover;
-    background-position: 0 -200px;
-}
-
-.kamar-deluxe {
-    height: 350px;
-    background-image: url('/img/kamar-deluxe.jpg');
-    background-size: cover;
-    background-position: 0 -200px;
-}
-
-.fasilitas {
+/* Gambar Fasilitas */
+.fasilitas img {
     width: 300px;
     height: 200px;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.fasilitas-1 {
-    background-image: url('/img/kolam-renang.jpg');
-}
-
-.fasilitas-2 {
-    background-image: url('/img/restoran.jpg');
-}
-
-.fasilitas-3 {
-    background-image: url('/img/bathtub.jpg');
 }

@@ -15,6 +15,7 @@
         <img src="/img/kamar-superior.jpg" alt="Kamar Superior">
     </div>
     
+    
     <h2>Tipe Deluxe</h2>
     <p>Fasilitas : </p>
     <ul>

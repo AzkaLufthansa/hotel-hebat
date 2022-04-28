@@ -13,6 +13,9 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('fasilitas') ? 'disabled text-decoration-underline' : '' }}" href="/fasilitas">Fasilitas</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('login', 'register') ? 'disabled text-decoration-underline' : '' }}" href="/login">Login</a>
+            </li>
         </ul>
     </div>
 

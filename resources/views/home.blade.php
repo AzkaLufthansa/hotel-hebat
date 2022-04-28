@@ -5,7 +5,7 @@
     <form class="row row-cols-lg-auto g-3 justify-content-center align-items-center">
         <div class="col-12">
             <div class="input-group date" id="datepicker">
-                <input type="text" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror" autocomplete="off" placeholder="Tanggal Cek In">
+                <input type="text" name="checkin" class="form-control @error('checkin') is-invalid @enderror" autocomplete="off" placeholder="Tanggal Cek In">
                 <span class="input-group-append">
                     <span class="input-group-text bg-white d-block">
                         <i class="fa fa-calendar"></i>
@@ -21,7 +21,7 @@
       
         <div class="col-12">
             <div class="input-group date" id="datepicker">
-                <input type="text" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror" autocomplete="off" placeholder="Tanggal Cek Out">
+                <input type="text" name="checkout" class="form-control @error('checkout') is-invalid @enderror" autocomplete="off" placeholder="Tanggal Cek Out">
                 <span class="input-group-append">
                     <span class="input-group-text bg-white d-block">
                         <i class="fa fa-calendar"></i>

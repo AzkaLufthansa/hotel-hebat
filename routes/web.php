@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 
@@ -15,23 +16,9 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        'title' => 'Home'
-    ]);
-});
-
-Route::get('/kamar', function () {
-    return view('kamar', [
-        'title' => 'Kamar'
-    ]);
-});
-
-Route::get('/fasilitas', function () {
-    return view('fasilitas', [
-        'title' => 'Fasilitas'
-    ]);
-});
+Route::get('/', [PageController::class, 'index']);
+Route::get('/kamar', [PageController::class, 'kamar']);
+Route::get('/fasilitas', [PageController::class, 'fasilitas']);
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);

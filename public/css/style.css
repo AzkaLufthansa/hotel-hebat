@@ -1,45 +1,43 @@
-/* .carousel .carousel-item {
+/* Hero Image */
+.hero { height:350px; }
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 25%;
+}
+
+
+.kamar-superior {
     height: 350px;
+    background-image: url('/img/kamar-superior.jpg');
     background-size: cover;
     background-position: 0 -200px;
-  } */
+}
 
-  .hero {
-      height: 350px;
-      background-image: url('/img/hotel.jpg');
-      background-size: cover;
-  }
+.kamar-deluxe {
+    height: 350px;
+    background-image: url('/img/kamar-deluxe.jpg');
+    background-size: cover;
+    background-position: 0 -200px;
+}
 
-  .kamar-superior {
-      height: 350px;
-      background-image: url('/img/kamar-superior.jpg');
-      background-size: cover;
-      background-position: 0 -200px;
-  }
+.fasilitas {
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
-  .kamar-deluxe {
-      height: 350px;
-      background-image: url('/img/kamar-deluxe.jpg');
-      background-size: cover;
-      background-position: 0 -200px;
-  }
+.fasilitas-1 {
+    background-image: url('/img/kolam-renang.jpg');
+}
 
-  .fasilitas {
-      width: 300px;
-      height: 200px;
-      background-size: cover;
-      background-repeat: no-repeat;
-      /* background-position: -30px -200px; */
-  }
+.fasilitas-2 {
+    background-image: url('/img/restoran.jpg');
+}
 
-  .fasilitas-1 {
-      background-image: url('/img/kolam-renang.jpg');
-  }
-
-  .fasilitas-2 {
-      background-image: url('/img/restoran.jpg');
-  }
-
-  .fasilitas-3 {
-      background-image: url('/img/bathtub.jpg');
-  }
+.fasilitas-3 {
+    background-image: url('/img/bathtub.jpg');
+}

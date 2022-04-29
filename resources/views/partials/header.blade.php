@@ -13,9 +13,20 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('fasilitas') ? 'disabled text-decoration-underline' : '' }}" href="/fasilitas">Fasilitas</a>
             </li>
+
+            @auth
+            <li class="nav-item">
+                <form action="/logout" method="POST">
+                    @csrf
+                    <button type="submit" class="nav-link logout-button" onclick="return confirm('Logout?')">Logout</button>
+                </form>
+            </li>
+            @else
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('login', 'register') ? 'disabled text-decoration-underline' : '' }}" href="/login">Login</a>
             </li>
+            @endauth
+
         </ul>
     </div>
 

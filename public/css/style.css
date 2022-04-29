@@ -32,3 +32,13 @@
     object-fit: cover;
     object-position: 0 50%;
 }
+
+/* Logout Button */
+.logout-button {
+    background: none!important;
+    border: none;
+    /* padding: 0!important; */
+    /* color: #0d6efd; */
+    text-decoration: none;
+    cursor: pointer;
+}

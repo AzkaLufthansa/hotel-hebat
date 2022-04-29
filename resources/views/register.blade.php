@@ -4,25 +4,42 @@
     <h2 class="mb-4">Register</h2>
 
     <div class="row auth">
-        {{-- Form Register --}}
         <div class="col-6">
-            <form>
+            
+            {{-- Form Register --}}
+            <form action="/register" method="POST">
+                @csrf
                 <div class="row">
                     <div class="col mb-3">
-                        <label for="nama" class="form-label">Nama Lengkap</label>
-                        <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Lengkap" required>
+                        <label for="name" class="form-label">Nama Lengkap</label>
+                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" value="{{ old('name') }}" placeholder="Nama Lengkap" required>
+                        @error('name')
+                            <div class="invalid-feedback">
+                            {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                 </div>
                 <div class="row">
                     <div class="col mb-3">
                         <label for="email" class="form-label">Alamat Email</label>
-                        <input type="email" name="email" class="form-control" id="email" placeholder="Alamat Email" required>
+                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{ old('email') }}" placeholder="Alamat Email" required>
+                        @error('email')
+                            <div class="invalid-feedback">
+                            {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                 </div>
                 <div class="row">
                     <div class="col mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Password" required>
+                        @error('password')
+                            <div class="invalid-feedback">
+                            {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                 </div>
                 <div class="row">

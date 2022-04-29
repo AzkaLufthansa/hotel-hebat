@@ -4,9 +4,27 @@
     <h2 class="mb-4">Login</h2>
 
     <div class="row auth">
-        {{-- Form Login --}}
-        <div class="col-6 mt-4">
-            <form>
+        <div class="col-6">
+
+            {{-- Jika Registrasi Berhasil --}}
+            @if(session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+
+            {{-- Jika Login Gagal --}}
+            @if(session()->has('loginError'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('loginError') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+
+            {{-- Form Login --}}
+            <form action="/login" method="POST">
+                @csrf
                 <div class="row">
                     <div class="col mb-3">
                         <label for="email" class="form-label">Alamat Email</label>
@@ -16,7 +34,7 @@
                 <div class="row">
                     <div class="col mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password" required>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
                     </div>
                 </div>
                 <div class="row">

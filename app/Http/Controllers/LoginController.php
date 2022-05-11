@@ -29,7 +29,7 @@ class LoginController extends Controller
             } else if(auth()->user()->role_id == 2) {
                 return redirect()->intended('/resepsionis');
             } else if(auth()->user()->role_id == 1) {
-                return redirect()->intended('/admin');
+                return redirect()->intended('/adminKamar');
             }
         }
 

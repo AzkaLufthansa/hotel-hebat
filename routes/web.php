@@ -29,4 +29,6 @@ Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 
 // Admin Pages
-Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/adminKamar', [AdminController::class, 'index']);
+Route::get('/fasilitasKamar', [AdminController::class, 'fasilitasKamar']);
+Route::get('/fasilitasHotel', [AdminController::class, 'fasilitasHotel']);

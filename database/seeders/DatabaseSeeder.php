@@ -6,6 +6,9 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Kamar;
+use App\Models\FasilitasKamar;
+use App\Models\FasilitasHotel;
 
 class DatabaseSeeder extends Seeder
 {
@@ -53,5 +56,47 @@ class DatabaseSeeder extends Seeder
         Role::create([
             'role' => 'Tamu'
         ]);
-    }
+
+
+        // Seeder Kamar
+        Kamar::create([
+            'tipe_kamar' => 'Superior',
+            'jumlah_kamar' => 32
+        ]);
+
+        Kamar::create([
+            'tipe_kamar' => 'Deluxe',
+            'jumlah_kamar' => 40
+        ]);
+
+
+        // Seeder Fasilitas Kamar
+        FasilitasKamar::create([
+            'tipe_kamar' => 'Superior',
+            'nama_fasilitas' => 'TV 32 Inch'
+        ]);
+
+        FasilitasKamar::create([
+            'tipe_kamar' => 'Deluxe',
+            'nama_fasilitas' => 'Bath Tub'
+        ]);
+
+        FasilitasKamar::create([
+            'tipe_kamar' => 'Deluxe',
+            'nama_fasilitas' => 'TV 40 Inch'
+        ]);
+
+        FasilitasKamar::create([
+            'tipe_kamar' => 'Deluxe',
+            'nama_fasilitas' => 'Coffee Maker'
+        ]);
+        
+
+        // Seeder Fasilitas Hotel
+        FasilitasHotel::create([
+            'nama_fasilitas' => 'Kolam Renang',
+            'keterangan' => 'Berada di lantai 3 dengan luas 50m persegi',
+            'image' => 'kolam-renang.jpg'
+        ]);
+    }   
 }

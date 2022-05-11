@@ -12,12 +12,17 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($kamars as $kamar)
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row">{{ $loop->iteration }}</th>
+                <td>{{ $kamar->tipe_kamar }}</td>
+                <td>{{ $kamar->jumlah_kamar }}</td>
+                <td>
+                    <a href="#">Ubah</a>
+                    <a href="#">Lihat</a>
+                </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

@@ -13,13 +13,18 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($fasilitas_hotels as $fasilitas_hotel)
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>Eka</td>
-                <td>@mdo</td>
+                <th scope="row">{{ $loop->iteration }}</th>
+                <td>{{ $fasilitas_hotel->nama_fasilitas }}</td>
+                <td>{{ $fasilitas_hotel->keterangan }}</td>
+                <td>{{ $fasilitas_hotel->image }}</td>
+                <td>
+                    <a href="#">Ubah</a>
+                    <a href="#">Lihat</a>
+                </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

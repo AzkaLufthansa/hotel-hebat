@@ -23,7 +23,14 @@ class LoginController extends Controller
 
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/');
+
+            if(auth()->user()->role_id == 3) {
+                return redirect()->intended('/');
+            } else if(auth()->user()->role_id == 2) {
+                return redirect()->intended('/resepsionis');
+            } else if(auth()->user()->role_id == 1) {
+                return redirect()->intended('/admin');
+            }
         }
 
         return back()->with('loginError', 'Login Failed!');

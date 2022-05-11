@@ -10,4 +10,8 @@ class FasilitasKamar extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function kamar() {
+        return $this->belongsTo(Kamar::class);
+    }
 }

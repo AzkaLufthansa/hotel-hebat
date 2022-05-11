@@ -61,32 +61,38 @@ class DatabaseSeeder extends Seeder
         // Seeder Kamar
         Kamar::create([
             'tipe_kamar' => 'Superior',
-            'jumlah_kamar' => 32
+            'jumlah_kamar' => 32,
+            'image' => 'kamar-superior.jpg'
         ]);
 
         Kamar::create([
             'tipe_kamar' => 'Deluxe',
-            'jumlah_kamar' => 40
+            'jumlah_kamar' => 40,
+            'image' => 'kamar-deluxe.jpg'
         ]);
 
 
         // Seeder Fasilitas Kamar
         FasilitasKamar::create([
+            'kamar_id' => 1,
             'tipe_kamar' => 'Superior',
             'nama_fasilitas' => 'TV 32 Inch'
         ]);
 
         FasilitasKamar::create([
+            'kamar_id' => 2,
             'tipe_kamar' => 'Deluxe',
             'nama_fasilitas' => 'Bath Tub'
         ]);
 
         FasilitasKamar::create([
+            'kamar_id' => 2,
             'tipe_kamar' => 'Deluxe',
             'nama_fasilitas' => 'TV 40 Inch'
         ]);
 
         FasilitasKamar::create([
+            'kamar_id' => 2,
             'tipe_kamar' => 'Deluxe',
             'nama_fasilitas' => 'Coffee Maker'
         ]);
@@ -97,6 +103,18 @@ class DatabaseSeeder extends Seeder
             'nama_fasilitas' => 'Kolam Renang',
             'keterangan' => 'Berada di lantai 3 dengan luas 50m persegi',
             'image' => 'kolam-renang.jpg'
+        ]);
+
+        FasilitasHotel::create([
+            'nama_fasilitas' => 'Restoran',
+            'keterangan' => 'Berada di lantai 2 dengan luas 200m persegi',
+            'image' => 'restoran.jpg'
+        ]);
+
+        FasilitasHotel::create([
+            'nama_fasilitas' => 'Bathtub',
+            'keterangan' => 'Bathtub terbaik dari Jamaika',
+            'image' => 'bathtub.jpg'
         ]);
     }   
 }

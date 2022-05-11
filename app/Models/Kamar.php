@@ -10,4 +10,8 @@ class Kamar extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function fasilitas() {
+        return $this->hasMany(FasilitasKamar::class);
+    }
 }

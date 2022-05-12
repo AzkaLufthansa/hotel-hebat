@@ -24,7 +24,7 @@
             @foreach ($fasilitas_kamars as $fasilitas_kamar)
             <tr>
                 <th scope="row">{{ $loop->iteration }}</th>
-                <td>{{ $fasilitas_kamar->kamar_id }}</td>
+                <td>{{ $fasilitas_kamar->kamar->tipe_kamar }}</td>
                 <td>{{ $fasilitas_kamar->nama_fasilitas }}</td>
                 <td>
                     <a href="#" class="badge bg-warning text-decoration-none">Ubah</a>

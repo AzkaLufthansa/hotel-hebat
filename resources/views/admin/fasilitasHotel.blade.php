@@ -20,12 +20,20 @@
                 <td>{{ $fasilitas_hotel->keterangan }}</td>
                 <td>{{ $fasilitas_hotel->image }}</td>
                 <td>
-                    <a href="#">Ubah</a>
-                    <a href="#">Lihat</a>
+                    <a href="#" class="badge bg-warning text-decoration-none">Ubah</a>
+                    <a href="#" class="badge bg-success text-decoration-none">Lihat</a>
+                    <a href="#" class="badge bg-danger text-decoration-none">Hapus</a>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
+
+    {{-- Tombol Tambah Data --}}
+    <div class="justify-content-end d-flex mt-4">
+        <a href="#">
+            <i class="fa fa-plus-circle fs-1 text-dark"></i>
+        </a>
+    </div>
 </div>
 @endsection

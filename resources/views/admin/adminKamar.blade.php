@@ -18,12 +18,20 @@
                 <td>{{ $kamar->tipe_kamar }}</td>
                 <td>{{ $kamar->jumlah_kamar }}</td>
                 <td>
-                    <a href="#">Ubah</a>
-                    <a href="#">Lihat</a>
+                    <a href="#" class="badge bg-warning text-decoration-none">Ubah</a>
+                    <a href="#" class="badge bg-success text-decoration-none">Lihat</a>
+                    <a href="#" class="badge bg-danger text-decoration-none">Hapus</a>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
+
+    {{-- Tombol Tambah Data --}}
+    <div class="justify-content-end d-flex mt-4">
+        <a href="#">
+            <i class="fa fa-plus-circle fs-1 text-dark"></i>
+        </a>
+    </div>
 </div>
 @endsection

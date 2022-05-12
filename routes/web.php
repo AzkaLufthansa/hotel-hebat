@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KamarController;
+use App\Http\Controllers\FasilitasKamarController;
+use App\Http\Controllers\FasilitasHotelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +31,6 @@ Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 
 // Admin Pages
-Route::get('/adminKamar', [AdminController::class, 'index']);
-Route::get('/fasilitasKamar', [AdminController::class, 'fasilitasKamar']);
-Route::get('/fasilitasHotel', [AdminController::class, 'fasilitasHotel']);
+Route::resource('adminKamar', KamarController::class);
+Route::resource('fasilitasKamar', FasilitasKamarController::class);
+Route::resource('fasilitasHotel', FasilitasHotelController::class);

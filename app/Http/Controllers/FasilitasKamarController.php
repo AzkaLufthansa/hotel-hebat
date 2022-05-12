@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\FasilitasKamar;
+use App\Models\Kamar;
 
 class FasilitasKamarController extends Controller
 {
@@ -15,7 +16,8 @@ class FasilitasKamarController extends Controller
     public function index()
     {
         return view('admin.fasilitasKamar', [
-            'fasilitas_kamars' => FasilitasKamar::all()
+            'fasilitas_kamars' => FasilitasKamar::all(),
+            'kamars' => Kamar::all()
         ]);
     }
 
@@ -37,7 +39,14 @@ class FasilitasKamarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'kamar_id' => 'required',
+            'nama_fasilitas' => 'required'
+        ]);
+
+        FasilitasKamar::create($validatedData);
+
+        return redirect('/fasilitasKamar')->with('success', 'Data baru berhasil ditambahkan!');
     }
 
     /**
@@ -80,8 +89,9 @@ class FasilitasKamarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(FasilitasKamar $fasilitasKamar)
     {
-        //
+        FasilitasKamar::destroy($fasilitasKamar->id);
+        return redirect('/fasilitasKamar')->with('success', 'Data berhasil dihapus!');
     }
 }

@@ -37,7 +37,15 @@ class FasilitasHotelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama_fasilitas' => 'required',
+            'keterangan' => 'required',
+            'image' => 'required'
+        ]);
+
+        FasilitasHotel::create($validatedData);
+
+        return redirect('/fasilitasHotel')->with('success', 'Data baru berhasil ditambahkan!');
     }
 
     /**
@@ -80,8 +88,9 @@ class FasilitasHotelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(FasilitasHotel $fasilitasHotel)
     {
-        //
+        FasilitasHotel::destroy($fasilitasHotel->id);
+        return redirect('/fasilitasHotel')->with('success', 'Data berhasil dihapus!');
     }
 }

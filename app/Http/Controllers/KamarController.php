@@ -26,7 +26,7 @@ class KamarController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -37,7 +37,15 @@ class KamarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'tipe_kamar' => 'required',
+            'jumlah_kamar' => 'required|numeric',
+            'image' => 'required'
+        ]);
+
+        Kamar::create($validatedData);
+
+        return redirect('/adminKamar')->with('success', 'Data baru berhasil ditambahkan!');
     }
 
     /**
@@ -80,8 +88,9 @@ class KamarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Kamar $adminKamar)
     {
-        //
+        Kamar::destroy($adminKamar->id);
+        return redirect('/adminKamar')->with('success', 'Data berhasil dihapus!');
     }
 }

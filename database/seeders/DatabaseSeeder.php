@@ -75,25 +75,25 @@ class DatabaseSeeder extends Seeder
         // Seeder Fasilitas Kamar
         FasilitasKamar::create([
             'kamar_id' => 1,
-            'tipe_kamar' => 'Superior',
+            // 'tipe_kamar' => 'Superior',
             'nama_fasilitas' => 'TV 32 Inch'
         ]);
 
         FasilitasKamar::create([
             'kamar_id' => 2,
-            'tipe_kamar' => 'Deluxe',
+            // 'tipe_kamar' => 'Deluxe',
             'nama_fasilitas' => 'Bath Tub'
         ]);
 
         FasilitasKamar::create([
             'kamar_id' => 2,
-            'tipe_kamar' => 'Deluxe',
+            // 'tipe_kamar' => 'Deluxe',
             'nama_fasilitas' => 'TV 40 Inch'
         ]);
 
         FasilitasKamar::create([
             'kamar_id' => 2,
-            'tipe_kamar' => 'Deluxe',
+            // 'tipe_kamar' => 'Deluxe',
             'nama_fasilitas' => 'Coffee Maker'
         ]);
         

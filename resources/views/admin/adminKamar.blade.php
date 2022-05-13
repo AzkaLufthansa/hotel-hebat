@@ -64,11 +64,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form action="/adminKamar" method="post">
+            <form action="/adminKamar" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="input-group mb-3">
-                        <input type="text" id="tipe_kamar" name="tipe_kamar" class="form-control @error('tipe_kamar') is-invalid @enderror" placeholder="Tipe Kamar">
+                        <input type="text" id="tipe_kamar" name="tipe_kamar" class="form-control @error('tipe_kamar') is-invalid @enderror" placeholder="Tipe Kamar" value="{{ old('tipe_kamar') }}">
                         @error('tipe_kamar')
                             <div class="invalid-feedback">
                             {{ $message }}
@@ -77,7 +77,7 @@
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="number" id="jumlah_kamar" name="jumlah_kamar" class="form-control @error('jumlah_kamar') is-invalid @enderror" placeholder="Jumlah Kamar">
+                        <input type="number" id="jumlah_kamar" name="jumlah_kamar" class="form-control @error('jumlah_kamar') is-invalid @enderror" placeholder="Jumlah Kamar" value="{{ old('jumlah_kamar') }}">
                         @error('jumlah_kamar')
                             <div class="invalid-feedback">
                             {{ $message }}
@@ -85,8 +85,8 @@
                         @enderror
                     </div>
 
-                    <div class="input-group">
-                        <input type="text" id="image" name="image" class="form-control @error('image') is-invalid @enderror" placeholder="Image">
+                    <div class="mb-3">
+                        <input class="form-control @error('image') is-invalid @enderror" type="file" id="formFile" name="image">
                         @error('image')
                             <div class="invalid-feedback">
                             {{ $message }}

@@ -40,8 +40,10 @@ class KamarController extends Controller
         $validatedData = $request->validate([
             'tipe_kamar' => 'required',
             'jumlah_kamar' => 'required|numeric',
-            'image' => 'required'
+            'image' => 'required|image|file|max:5000'
         ]);
+
+        $validatedData['image'] = $request->file('image')->store('kamar-images');
 
         Kamar::create($validatedData);
 

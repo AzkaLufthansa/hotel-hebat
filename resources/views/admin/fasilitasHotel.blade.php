@@ -65,11 +65,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form action="/fasilitasHotel" method="post">
+            <form action="/fasilitasHotel" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="input-group mb-3">
-                        <input type="text" id="nama_fasilitas" name="nama_fasilitas" class="form-control @error('nama_fasilitas') is-invalid @enderror" placeholder="Nama Fasilitas">
+                        <input type="text" id="nama_fasilitas" name="nama_fasilitas" class="form-control @error('nama_fasilitas') is-invalid @enderror" placeholder="Nama Fasilitas" value="{{ old('nama_fasilitas') }}">
                         @error('nama_fasilitas')
                             <div class="invalid-feedback">
                             {{ $message }}
@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="text" id="keterangan" name="keterangan" class="form-control @error('keterangan') is-invalid @enderror" placeholder="Keterangan">
+                        <input type="text" id="keterangan" name="keterangan" class="form-control @error('keterangan') is-invalid @enderror" placeholder="Keterangan" value="{{ old('keterangan') }}">
                         @error('keterangan')
                             <div class="invalid-feedback">
                             {{ $message }}
@@ -86,8 +86,8 @@
                         @enderror
                     </div>
 
-                    <div class="input-group">
-                        <input type="text" id="image" name="image" class="form-control @error('image') is-invalid @enderror" placeholder="Image">
+                    <div class="mb-3">
+                        <input class="form-control @error('image') is-invalid @enderror" type="file" id="formFile" name="image">
                         @error('image')
                             <div class="invalid-feedback">
                             {{ $message }}

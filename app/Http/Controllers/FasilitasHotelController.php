@@ -40,8 +40,10 @@ class FasilitasHotelController extends Controller
         $validatedData = $request->validate([
             'nama_fasilitas' => 'required',
             'keterangan' => 'required',
-            'image' => 'required'
+            'image' => 'required|image|file|max:5000'
         ]);
+
+        $validatedData['image'] = $request->file('image')->store('fasilitas-hotel');
 
         FasilitasHotel::create($validatedData);
 

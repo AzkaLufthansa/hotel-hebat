@@ -11,7 +11,7 @@
     </ul>
     
     <div class="kamar border border-dark mb-5">
-        <img src="/img/{{ $kamar->image }}" alt="Kamar Superior">
+        <img src="{{ asset('storage/' . $kamar->image) }}" alt="Kamar Superior">
     </div>
     @endforeach
 @endsection

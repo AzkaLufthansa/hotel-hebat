@@ -25,6 +25,7 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'reservasi']);
         Permission::create(['name' => 'cetak-bukti']);
         Permission::create(['name' => 'mengelola-data']);
+        Permission::create(['name' => 'pengecekan-data-reservasi']);
 
          //create roles and assign existing permissions
          $roleTamu = Role::create(['name' => 'tamu']);
@@ -33,6 +34,9 @@ class PermissionSeeder extends Seeder
 
          $roleAdmin = Role::create(['name' => 'admin']);
          $roleAdmin->givePermissionTo('mengelola-data');
+
+         $roleResepsionis = Role::create(['name' => 'resepsionis']);
+         $roleResepsionis->givePermissionTo('pengecekan-data-reservasi');
 
          // create demo users
         $user = User::factory()->create([
@@ -50,5 +54,13 @@ class PermissionSeeder extends Seeder
             'password' => bcrypt('12345678')
         ]);
         $user->assignRole($roleTamu);
+
+        $user = User::factory()->create([
+            'role_id' => 2,
+            'name' => 'Resepsionis',
+            'email' => 'resepsionis@gmail.com',
+            'password' => bcrypt('12345678')
+        ]);
+        $user->assignRole($roleResepsionis);
     }
 }

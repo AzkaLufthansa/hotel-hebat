@@ -16,7 +16,7 @@
 
             @auth
             <li class="nav-item">
-                <a class="nav-link" href="/logout" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a>
+                <a class="nav-link" href="/logout" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout <i class="fa fa-sign-out"></i></a>
             </li>
             @else
             <li class="nav-item">

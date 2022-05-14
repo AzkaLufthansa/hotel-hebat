@@ -19,18 +19,20 @@ use App\Http\Controllers\FasilitasHotelController;
 |
 */
 
-Route::get('/', [PageController::class, 'index']);
+Route::get('/', [PageController::class, 'index'])->name('login');
 Route::get('/kamar', [PageController::class, 'kamar']);
 Route::get('/fasilitas', [PageController::class, 'fasilitas']);
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
 // Admin Pages
-Route::resource('adminKamar', KamarController::class);
-Route::resource('fasilitasKamar', FasilitasKamarController::class);
-Route::resource('fasilitasHotel', FasilitasHotelController::class);
+Route::middleware(['auth', 'permission:mengelola-data'])->group(function () {
+    Route::resource('adminKamar', KamarController::class)->middleware('auth');
+    Route::resource('fasilitasKamar', FasilitasKamarController::class)->middleware('auth');
+    Route::resource('fasilitasHotel', FasilitasHotelController::class)->middleware('auth');
+});

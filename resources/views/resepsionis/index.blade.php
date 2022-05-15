@@ -6,7 +6,7 @@
     {{-- Form Filter --}}
     <form action="" class="col-3 mb-3">
         <div class="input-group date" id="datepicker">
-            <input type="text" name="checkin" class="form-control @error('checkin') is-invalid @enderror" autocomplete="off" placeholder="Berdasarkan tanggal Cek In">
+            <input type="text" name="checkin" class="form-control @error('checkin') is-invalid @enderror" autocomplete="off" placeholder="Berdasarkan tanggal cek in">
             <span class="input-group-append">
                 <span class="input-group-text bg-white d-block">
                     <i class="fa fa-calendar"></i>
@@ -23,7 +23,7 @@
     {{-- Form Search --}}
     <form action="" class="col-3 mb-3">
         <div class="input-group">
-            <input type="text" class="form-control" name="keyword" placeholder="Masukan Kata Kunci" aria-label="Recipient's username" aria-describedby="button-addon2" value="{{ request('keyword') }}">
+            <input type="text" class="form-control" name="keyword" placeholder="Masukan nama tamu" aria-label="Recipient's username" aria-describedby="button-addon2" value="{{ request('keyword') }}">
             <button class="btn btn-primary" type="submit" id="button-addon2">Cari</button>
         </div>
     </form>

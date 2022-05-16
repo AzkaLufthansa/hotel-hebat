@@ -15,7 +15,7 @@ class FasilitasKamarController extends Controller
      */
     public function index()
     {
-        return view('admin.fasilitasKamar', [
+        return view('admin.kelola_fasilitas_kamar', [
             'fasilitas_kamars' => FasilitasKamar::all(),
             'kamars' => Kamar::all()
         ]);
@@ -46,7 +46,7 @@ class FasilitasKamarController extends Controller
 
         FasilitasKamar::create($validatedData);
 
-        return redirect('/fasilitasKamar')->with('success', 'Data baru berhasil ditambahkan!');
+        return redirect('/kelola_fasilitas_kamar')->with('success', 'Data baru berhasil ditambahkan!');
     }
 
     /**
@@ -89,9 +89,9 @@ class FasilitasKamarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FasilitasKamar $fasilitasKamar)
+    public function destroy(FasilitasKamar $kelola_fasilitas_kamar)
     {
-        FasilitasKamar::destroy($fasilitasKamar->id);
-        return redirect('/fasilitasKamar')->with('success', 'Data berhasil dihapus!');
+        FasilitasKamar::destroy($kelola_fasilitas_kamar->id);
+        return redirect('/kelola_fasilitas_kamar')->with('success', 'Data berhasil dihapus!');
     }
 }

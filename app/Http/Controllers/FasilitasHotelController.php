@@ -14,7 +14,7 @@ class FasilitasHotelController extends Controller
      */
     public function index()
     {
-        return view('admin.fasilitasHotel', [
+        return view('admin.kelola_fasilitas_hotel', [
             'fasilitas_hotels' => FasilitasHotel::all()
         ]);
     }
@@ -47,7 +47,7 @@ class FasilitasHotelController extends Controller
 
         FasilitasHotel::create($validatedData);
 
-        return redirect('/fasilitasHotel')->with('success', 'Data baru berhasil ditambahkan!');
+        return redirect('/kelola_fasilitas_hotel')->with('success', 'Data baru berhasil ditambahkan!');
     }
 
     /**
@@ -90,9 +90,9 @@ class FasilitasHotelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FasilitasHotel $fasilitasHotel)
+    public function destroy(FasilitasHotel $kelola_fasilitas_hotel)
     {
-        FasilitasHotel::destroy($fasilitasHotel->id);
-        return redirect('/fasilitasHotel')->with('success', 'Data berhasil dihapus!');
+        FasilitasHotel::destroy($kelola_fasilitas_hotel->id);
+        return redirect('/kelola_fasilitas_hotel')->with('success', 'Data berhasil dihapus!');
     }
 }

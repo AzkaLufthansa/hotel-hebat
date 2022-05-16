@@ -39,7 +39,7 @@
                 <td>
                     <a href="#" class="badge bg-warning text-decoration-none">Ubah</a>
                     <a href="#" class="badge bg-success text-decoration-none">Lihat</a>
-                    <form action="/adminKamar/{{ $kamar->id }}" method="post" class="d-inline">
+                    <form action="/kelola_kamar/{{ $kamar->id }}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
                         <button type="submit" class="badge bg-danger border-0" onclick="return confirm('Apakah anda yakin?')">Hapus</button>
@@ -52,7 +52,7 @@
 
     {{-- Tombol Tambah Data --}}
     <div class="justify-content-end d-flex mt-4">
-        <a href="/adminKamar/create" data-bs-toggle="modal" data-bs-target="#modalForm">
+        <a href="/kelola_kamar/create" data-bs-toggle="modal" data-bs-target="#modalForm">
             <i class="fa fa-plus-circle fs-1 text-dark"></i>
         </a>
     </div>
@@ -72,7 +72,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form action="/adminKamar" method="post" enctype="multipart/form-data">
+            <form action="/kelola_kamar" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="input-group mb-3">

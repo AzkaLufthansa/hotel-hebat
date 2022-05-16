@@ -35,9 +35,9 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 // Admin Pages
 Route::middleware(['auth', 'permission:mengelola-data'])->group(function () {
-    Route::resource('adminKamar', KamarController::class)->middleware('auth');
-    Route::resource('fasilitasKamar', FasilitasKamarController::class)->middleware('auth');
-    Route::resource('fasilitasHotel', FasilitasHotelController::class)->middleware('auth');
+    Route::resource('kelola_kamar', KamarController::class)->middleware('auth');
+    Route::resource('kelola_fasilitas_kamar', FasilitasKamarController::class)->middleware('auth');
+    Route::resource('kelola_fasilitas_hotel', FasilitasHotelController::class)->middleware('auth');
 });
 
 // Resepsionis Pages

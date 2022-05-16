@@ -14,7 +14,7 @@ class KamarController extends Controller
      */
     public function index()
     {
-        return view('admin.adminKamar', [
+        return view('admin.kelola_kamar', [
             'kamars' => Kamar::all()
         ]);
     }
@@ -47,7 +47,7 @@ class KamarController extends Controller
 
         Kamar::create($validatedData);
 
-        return redirect('/adminKamar')->with('success', 'Data baru berhasil ditambahkan!');
+        return redirect('/kelola_kamar')->with('success', 'Data baru berhasil ditambahkan!');
     }
 
     /**
@@ -90,9 +90,9 @@ class KamarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kamar $adminKamar)
+    public function destroy(Kamar $kelola_kamar)
     {
-        Kamar::destroy($adminKamar->id);
-        return redirect('/adminKamar')->with('success', 'Data berhasil dihapus!');
+        Kamar::destroy($kelola_kamar->id);
+        return redirect('/kelola_kamar')->with('success', 'Data berhasil dihapus!');
     }
 }

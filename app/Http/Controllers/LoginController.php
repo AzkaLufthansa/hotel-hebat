@@ -25,11 +25,11 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             if(auth()->user()->role_id == 3) {
-                return redirect()->intended('/');
+                return redirect()->intended('/')->with('success_login', 'Anda berhasil login! Selamat datang kembali ' . auth()->user()->name);
             } else if(auth()->user()->role_id == 2) {
-                return redirect()->intended('/resepsionis');
+                return redirect()->intended('/resepsionis')->with('success_login', 'Anda berhasil login! Selamat datang kembali ' . auth()->user()->name);
             } else if(auth()->user()->role_id == 1) {
-                return redirect()->intended('/kelola_kamar');
+                return redirect()->intended('/kelola_kamar')->with('success_login', 'Anda berhasil login! Selamat datang kembali ' . auth()->user()->name);
             }
         }
 
@@ -44,6 +44,6 @@ class LoginController extends Controller
     
         $request->session()->regenerateToken();
     
-        return redirect('/');
+        return redirect('/')->with('success_logout', 'Anda berhasil logout!');
     }
 }

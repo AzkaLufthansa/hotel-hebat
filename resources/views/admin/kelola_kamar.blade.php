@@ -2,6 +2,13 @@
 
 @section('container')
 
+@if(session()->has('success_login'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success_login') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
 {{-- Alert Jika Data Berhasil Ditambahkan --}}
 @if(session()->has('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">

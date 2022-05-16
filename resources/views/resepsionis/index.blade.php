@@ -2,6 +2,13 @@
 
 @section('container')
 
+@if(session()->has('success_login'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success_login') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
 <div class="row justify-content-between">
     {{-- Form Filter --}}
     <form action="" class="col-3 mb-3">

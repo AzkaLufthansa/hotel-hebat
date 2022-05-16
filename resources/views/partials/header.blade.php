@@ -27,8 +27,23 @@
         </ul>
     </div>
 
+    {{-- Jika berhasil logout --}}
+    @if(session()->has('success_logout'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success_logout') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    @if(session()->has('success_login'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success_login') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     {{-- Hero Image --}}
-    <div class="hero mt-4 border border-dark">
+    <div class="hero mt-3 border border-dark">
         <img src="/img/hotel.jpg" alt="Hotel Hebat">
     </div>
 </header>

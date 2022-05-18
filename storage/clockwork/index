@@ -21,3 +21,6 @@
 1652679361-2251-377118420,1652679361.1136,GET,/kelola_fasilitas_hotel,"App\Http\Controllers\FasilitasHotelController@index",200,588.14907073975,request
 1652680079-2373-1819530417,1652680061.5596,POST,/logout,"App\Http\Controllers\LoginController@logout",302,36630.920886993,request
 1652680098-5474-37471742,1652680098.4274,GET,/,"App\Http\Controllers\PageController@index",200,4242.8619861603,request
+1652829758-5794-1477781619,1652829758.0912,GET,/,"App\Http\Controllers\PageController@index",200,1071.7179775238,request
+1652829778-2599-1862451403,1652829777.9948,GET,/login,"App\Http\Controllers\LoginController@index",200,1313.0140304565,request
+1652829794-9620-1602148690,1652829794.6931,GET,/kamar,"App\Http\Controllers\PageController@kamar",200,4493.842124939,request

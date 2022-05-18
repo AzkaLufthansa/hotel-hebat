@@ -9,6 +9,20 @@
     </div>
 @endif
 
+@if(session()->has('konfirmasi_berhasil'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('konfirmasi_berhasil') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
+@if(session()->has('konfirmasi_gagal'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ session('konfirmasi_gagal') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
 <div class="row justify-content-between">
     {{-- Form Filter --}}
     <form action="" class="col-3 mb-3">
@@ -45,19 +59,34 @@
                 <th scope="col">Nama Tamu</th>
                 <th scope="col">Tanggal Cek In</th>
                 <th scope="col">Tanggal Cek Out</th>
+                <th scope="col">Status</th>
                 <th scope="col">Aksi</th>
             </tr>
         </thead>
         <tbody>
+            @foreach ($pesanan as $p)
             <tr>
                 <th scope="row">1</th>
-                <td>Mr X</td>
-                <td>15-01-2022</td>
-                <td>17-01-2022</td>
+                <td>{{ $p->nama_tamu }}</td>
+                <td>{{ $p->cek_in }}</td>
+                <td>{{ $p->cek_out }}</td>
                 <td>
-                    <a href="#" class="badge bg-warning text-decoration-none">Cek In</a>
+                    @if ($p->status === 1)
+                        <span class="badge bg-warning">Belum di Konfirmasi</span>
+                    @else
+                        <span class="badge bg-success">Sudah di Konfirmasi</span>
+                    @endif
+                </td>
+                <td>
+                    <form action="/konfirmasi" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $p->id }}">
+                        {{-- <input type="hidden" name="status" value="2"> --}}
+                        <button type="submit" class="badge bg-primary border-0" onclick="return confirm('Konfirmasi pesanan ini?')">Cek In</button>
+                    </form>
                 </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

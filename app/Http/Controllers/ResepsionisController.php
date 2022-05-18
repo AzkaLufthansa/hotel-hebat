@@ -3,11 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pesanan;
 
 class ResepsionisController extends Controller
 {
     public function index()
     {
-        return view('resepsionis.index');
+        return view('resepsionis.index', [
+            'pesanan' => Pesanan::all()
+        ]);
+    }
+
+    public function konfirmasi(Request $request)
+    {
+        $pesanan = Pesanan::find($request->id);
+
+        if($pesanan->status === 2) {
+            return redirect('/resepsionis')->with('konfirmasi_gagal', 'Status pesanan sudah di konfirmasi!');
+        }
+        
+        $pesanan->update(['status' => 2]);
+
+        return redirect('/resepsionis')->with('konfirmasi_berhasil', 'Pesanan berhasil di konfirmasi!');
     }
 }

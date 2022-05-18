@@ -35,11 +35,28 @@
         </div>
     @endif
 
+    {{-- Jika berhasil login --}}
     @if(session()->has('success_login'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success_login') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
+    @endif
+
+    {{-- Jika berhasil pesan --}}
+    @if(session()->has('success_booking'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success_booking') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+
+    {{-- Jika gagal pesan --}}
+    @if ($errors->any())
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Pemesanan gagal!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     @endif
 
     {{-- Hero Image --}}

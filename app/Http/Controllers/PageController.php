@@ -12,7 +12,8 @@ class PageController extends Controller
     public function index()
     {
         return view('home', [
-            'title' => 'Home'
+            'title' => 'Home',
+            'kamar' => Kamar::all()
         ]);
     }
 

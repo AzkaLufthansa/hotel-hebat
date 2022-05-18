@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\FasilitasKamarController;
 use App\Http\Controllers\FasilitasHotelController;
@@ -33,6 +34,9 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
+// Route Pemesanan
+Route::post('/pesan', [PemesananController::class, 'pesan'])->middleware('permission:reservasi');
+
 // Admin Pages
 Route::middleware(['auth', 'permission:mengelola-data'])->group(function () {
     Route::resource('kelola_kamar', KamarController::class)->middleware('auth');
@@ -42,3 +46,4 @@ Route::middleware(['auth', 'permission:mengelola-data'])->group(function () {
 
 // Resepsionis Pages
 Route::get('/resepsionis', [ResepsionisController::class, 'index'])->middleware(['auth', 'permission:pengecekan-data-reservasi']);
+Route::post('/konfirmasi', [ResepsionisController::class, 'konfirmasi'])->middleware(['auth', 'permission:pengecekan-data-reservasi']);

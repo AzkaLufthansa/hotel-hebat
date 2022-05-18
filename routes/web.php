@@ -39,9 +39,9 @@ Route::post('/pesan', [PemesananController::class, 'pesan'])->middleware('permis
 
 // Admin Pages
 Route::middleware(['auth', 'permission:mengelola-data'])->group(function () {
-    Route::resource('kelola_kamar', KamarController::class)->middleware('auth');
-    Route::resource('kelola_fasilitas_kamar', FasilitasKamarController::class)->middleware('auth');
-    Route::resource('kelola_fasilitas_hotel', FasilitasHotelController::class)->middleware('auth');
+    Route::resource('kelola_kamar', KamarController::class);
+    Route::resource('kelola_fasilitas_kamar', FasilitasKamarController::class);
+    Route::resource('kelola_fasilitas_hotel', FasilitasHotelController::class);
 });
 
 // Resepsionis Pages

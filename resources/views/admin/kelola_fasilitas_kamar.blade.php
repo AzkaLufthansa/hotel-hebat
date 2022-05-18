@@ -29,15 +29,15 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($fasilitas_kamars as $fasilitas_kamar)
+            @foreach ($fasilitas_kamar as $fk)
             <tr>
                 <th scope="row">{{ $loop->iteration }}</th>
-                <td>{{ $fasilitas_kamar->kamar->tipe_kamar }}</td>
-                <td>{{ $fasilitas_kamar->nama_fasilitas }}</td>
+                <td>{{ $fk->kamar->tipe_kamar }}</td>
+                <td>{{ $fk->nama_fasilitas }}</td>
                 <td>
                     <a href="#" class="badge bg-warning text-decoration-none">Ubah</a>
                     <a href="#" class="badge bg-success text-decoration-none">Lihat</a>
-                    <form action="/kelola_fasilitas_kamar/{{ $fasilitas_kamar->id }}" method="post" class="d-inline">
+                    <form action="/kelola_fasilitas_kamar/{{ $fk->id }}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
                         <button type="submit" class="badge bg-danger border-0" onclick="return confirm('Apakah anda yakin?')">Hapus</button>
@@ -75,8 +75,8 @@
                 <div class="modal-body">
                     <div class="input-group mb-3">
                         <select class="form-select" id="kamar_id" name="kamar_id" aria-label="Default select example">
-                            @foreach ($kamars as $kamar)
-                            <option value="{{ $kamar->id }}">{{ $kamar->tipe_kamar }}</option>
+                            @foreach ($kamar as $k)
+                            <option value="{{ $k->id }}">{{ $k->tipe_kamar }}</option>
                             @endforeach
                         </select>
                     </div>

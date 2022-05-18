@@ -25,7 +25,8 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'reservasi']);
         Permission::create(['name' => 'cetak-bukti']);
         Permission::create(['name' => 'mengelola-data']);
-        Permission::create(['name' => 'pengecekan-data-reservasi']);
+        Permission::create(['name' => 'pengecekan-data-pesanan']);
+        Permission::create(['name' => 'konfirmasi-pesanan']);
 
          //create roles and assign existing permissions
          $roleTamu = Role::create(['name' => 'tamu']);
@@ -36,7 +37,8 @@ class PermissionSeeder extends Seeder
          $roleAdmin->givePermissionTo('mengelola-data');
 
          $roleResepsionis = Role::create(['name' => 'resepsionis']);
-         $roleResepsionis->givePermissionTo('pengecekan-data-reservasi');
+         $roleResepsionis->givePermissionTo('pengecekan-data-pesanan');
+         $roleResepsionis->givePermissionTo('konfirmasi-pesanan');
 
          // create demo users
         $user = User::factory()->create([

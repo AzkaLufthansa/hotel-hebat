@@ -16,8 +16,8 @@ class FasilitasKamarController extends Controller
     public function index()
     {
         return view('admin.kelola_fasilitas_kamar', [
-            'fasilitas_kamars' => FasilitasKamar::with('kamar')->get(),
-            'kamars' => Kamar::all()
+            'fasilitas_kamar' => FasilitasKamar::with('kamar')->get(),
+            'kamar' => Kamar::all()
         ]);
     }
 

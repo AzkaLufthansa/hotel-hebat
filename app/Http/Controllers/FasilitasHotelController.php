@@ -15,7 +15,7 @@ class FasilitasHotelController extends Controller
     public function index()
     {
         return view('admin.kelola_fasilitas_hotel', [
-            'fasilitas_hotels' => FasilitasHotel::all()
+            'fasilitas_hotel' => FasilitasHotel::all()
         ]);
     }
 

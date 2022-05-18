@@ -15,7 +15,7 @@ class KamarController extends Controller
     public function index()
     {
         return view('admin.kelola_kamar', [
-            'kamars' => Kamar::all()
+            'kamar' => Kamar::all()
         ]);
     }
 

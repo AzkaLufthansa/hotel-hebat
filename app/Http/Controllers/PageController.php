@@ -21,7 +21,7 @@ class PageController extends Controller
     {
         return view('kamar', [
             'title' => 'Kamar',
-            'kamars' => Kamar::with('fasilitas')->get()
+            'kamar' => Kamar::with('fasilitas')->get()
         ]);
     }
 

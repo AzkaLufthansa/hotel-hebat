@@ -37,16 +37,16 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($kamars as $kamar)
+            @foreach ($kamar as $k)
             <tr>
                 <th scope="row">{{ $loop->iteration }}</th>
-                <td>{{ $kamar->tipe_kamar }}</td>
-                <td>{{ $kamar->jumlah_kamar }}</td>
-                <td>{{ $kamar->image }}</td>
+                <td>{{ $k->tipe_kamar }}</td>
+                <td>{{ $k->jumlah_kamar }}</td>
+                <td>{{ $k->image }}</td>
                 <td>
                     <a href="#" class="badge bg-warning text-decoration-none">Ubah</a>
                     <a href="#" class="badge bg-success text-decoration-none">Lihat</a>
-                    <form action="/kelola_kamar/{{ $kamar->id }}" method="post" class="d-inline">
+                    <form action="/kelola_kamar/{{ $k->id }}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
                         <button type="submit" class="badge bg-danger border-0" onclick="return confirm('Apakah anda yakin?')">Hapus</button>

@@ -1,17 +1,17 @@
 @extends('layouts.main')
 
 @section('container')
-    @foreach ($kamars as $kamar)
-    <h2>Kamar {{ $kamar->tipe_kamar }}</h2>
+    @foreach ($kamar as $k)
+    <h2>Kamar {{ $k->tipe_kamar }}</h2>
     <p>Fasilitas : </p>
     <ul>
-        @foreach ($kamar->fasilitas as $fasilitas)
+        @foreach ($k->fasilitas as $fasilitas)
         <li>{{ $fasilitas->nama_fasilitas }}</li>
         @endforeach
     </ul>
     
     <div class="kamar border border-dark mb-5">
-        <img src="{{ asset('storage/' . $kamar->image) }}" alt="Kamar Superior">
+        <img src="{{ asset('storage/' . $k->image) }}" alt="Kamar Superior">
     </div>
     @endforeach
 @endsection

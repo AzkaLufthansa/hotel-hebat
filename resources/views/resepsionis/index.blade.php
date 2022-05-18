@@ -2,6 +2,7 @@
 
 @section('container')
 
+{{-- Jika login berhasil --}}
 @if(session()->has('success_login'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{ session('success_login') }}
@@ -9,6 +10,7 @@
     </div>
 @endif
 
+{{-- Jika konfirmasi berhasil --}}
 @if(session()->has('konfirmasi_berhasil'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{ session('konfirmasi_berhasil') }}
@@ -16,6 +18,7 @@
     </div>
 @endif
 
+{{-- Jika konfirmasi gagal --}}
 @if(session()->has('konfirmasi_gagal'))
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         {{ session('konfirmasi_gagal') }}
@@ -81,7 +84,6 @@
                     <form action="/konfirmasi" method="post">
                         @csrf
                         <input type="hidden" name="id" value="{{ $p->id }}">
-                        {{-- <input type="hidden" name="status" value="2"> --}}
                         <button type="submit" class="badge bg-primary border-0" onclick="return confirm('Konfirmasi pesanan ini?')">Cek In</button>
                     </form>
                 </td>

@@ -30,16 +30,16 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($fasilitas_hotels as $fasilitas_hotel)
+            @foreach ($fasilitas_hotel as $fh)
             <tr>
                 <th scope="row">{{ $loop->iteration }}</th>
-                <td>{{ $fasilitas_hotel->nama_fasilitas }}</td>
-                <td>{{ $fasilitas_hotel->keterangan }}</td>
-                <td>{{ $fasilitas_hotel->image }}</td>
+                <td>{{ $fh->nama_fasilitas }}</td>
+                <td>{{ $fh->keterangan }}</td>
+                <td>{{ $fh->image }}</td>
                 <td>
                     <a href="#" class="badge bg-warning text-decoration-none">Ubah</a>
                     <a href="#" class="badge bg-success text-decoration-none">Lihat</a>
-                    <form action="/kelola_fasilitas_hotel/{{ $fasilitas_hotel->id }}" method="post" class="d-inline">
+                    <form action="/kelola_fasilitas_hotel/{{ $fh->id }}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
                         <button type="submit" class="badge bg-danger border-0" onclick="return confirm('Apakah anda yakin?')">Hapus</button>

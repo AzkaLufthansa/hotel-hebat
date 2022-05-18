@@ -45,5 +45,5 @@ Route::middleware(['auth', 'permission:mengelola-data'])->group(function () {
 });
 
 // Resepsionis Pages
-Route::get('/resepsionis', [ResepsionisController::class, 'index'])->middleware(['auth', 'permission:pengecekan-data-reservasi']);
-Route::post('/konfirmasi', [ResepsionisController::class, 'konfirmasi'])->middleware(['auth', 'permission:pengecekan-data-reservasi']);
+Route::get('/resepsionis', [ResepsionisController::class, 'index'])->middleware(['auth', 'permission:pengecekan-data-pesanan']);
+Route::post('/konfirmasi', [ResepsionisController::class, 'konfirmasi'])->middleware(['auth', 'permission:konfirmasi-pesanan']);

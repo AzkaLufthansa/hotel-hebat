@@ -53,7 +53,7 @@
     {{-- Tombol Tambah Data --}}
     <div class="justify-content-end d-flex mt-4">
         <a href="/kelola_fasilitas_hotel/create" data-bs-toggle="modal" data-bs-target="#modalForm">
-            <i class="fa fa-plus-circle fs-1 text-dark"></i>
+            <i class="fa-solid fa-circle-plus fs-1 text-dark"></i>
         </a>
     </div>
 </div>

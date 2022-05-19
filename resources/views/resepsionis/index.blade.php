@@ -26,11 +26,11 @@
     </div>
 @endif
 
-<div class="row justify-content-between">
-    {{-- Form Filter --}}
-    <form action="" class="col-3 mb-3">
+{{-- Form Filter --}}
+<form action="/resepsionis" method="get" class="row justify-content-between">
+    <div class="col-3 mb-3">
         <div class="input-group date" id="datepicker">
-            <input type="text" name="checkin" class="form-control @error('checkin') is-invalid @enderror" autocomplete="off" placeholder="Berdasarkan tanggal cek in">
+            <input type="text" name="input" class="form-control @error('checkin') is-invalid @enderror" autocomplete="off" placeholder="Berdasarkan tanggal cek in" value="{{ request('input') }}">
             <span class="input-group-append">
                 <span class="input-group-text bg-white d-block">
                     <i class="fa fa-calendar"></i>
@@ -42,16 +42,17 @@
                 </div>
             @enderror
         </div>
-    </form>
+    </div>
 
-    {{-- Form Search --}}
-    <form action="" class="col-3 mb-3">
+{{-- Form Search --}}
+    <div class="col-3 mb-3">
         <div class="input-group">
-            <input type="text" class="form-control" name="keyword" placeholder="Masukan nama tamu" aria-label="Recipient's username" aria-describedby="button-addon2" value="{{ request('keyword') }}">
+            <input type="text" class="form-control" name="keyword" placeholder="Masukan nama tamu" aria-label="Recipient's username" aria-describedby="button-addon2" value="{{ request('keyword') }}" autocomplete="off">
+            {{-- <button class="btn btn-danger" type="reset" value="reset" id="button-addon2">Reset</button> --}}
             <button class="btn btn-primary" type="submit" id="button-addon2">Cari</button>
         </div>
-    </form>
-</div>
+    </div>
+</form>
 
 {{-- Tabel --}}
 <div class="table-responsive">

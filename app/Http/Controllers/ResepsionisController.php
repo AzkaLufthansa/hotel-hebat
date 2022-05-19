@@ -10,7 +10,7 @@ class ResepsionisController extends Controller
     public function index()
     {
         return view('resepsionis.index', [
-            'pesanan' => Pesanan::all()
+            'pesanan' => Pesanan::searching()->get()
         ]);
     }
 

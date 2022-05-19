@@ -60,8 +60,10 @@
     @endif
 
     {{-- Hero Image --}}
-    <div class="hero mt-3 border border-dark">
-        <img src="/img/hotel.jpg" alt="Hotel Hebat">
+    <div class="card bg-light shadow-sm mt-3">
+        <div class="card-body">
+            <img src="/img/hotel.jpg" alt="Hotel Hebat" class="d-block w-100" height="350">
+        </div>
     </div>
 </header>
 

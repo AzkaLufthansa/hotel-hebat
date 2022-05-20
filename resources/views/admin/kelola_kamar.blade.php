@@ -44,8 +44,7 @@
                 <td>{{ $k->jumlah_kamar }}</td>
                 <td>{{ $k->image }}</td>
                 <td>
-                    <a href="#" class="badge bg-warning text-decoration-none">Ubah</a>
-                    <a href="#" class="badge bg-success text-decoration-none">Lihat</a>
+                    <a href="#" class="badge bg-warning text-decoration-none edit-kamar" data-bs-toggle="modal" data-bs-target="#modalForm" data-id="{{ $k->id }}">Ubah</a>
                     <form action="/kelola_kamar/{{ $k->id }}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
@@ -59,7 +58,7 @@
 
     {{-- Tombol Tambah Data --}}
     <div class="justify-content-end d-flex mt-4">
-        <a href="/kelola_kamar/create" data-bs-toggle="modal" data-bs-target="#modalForm">
+        <a href="/kelola_kamar/create" class="tombolTambahData" data-bs-toggle="modal" data-bs-target="#modalForm">
             <i class="fa-solid fa-circle-plus fs-1 text-dark"></i>
         </a>
     </div>
@@ -75,7 +74,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tambah Data</h5>
+                <h5 class="modal-title" id="formModalLabel">Tambah Data</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -101,7 +100,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <input class="form-control @error('image') is-invalid @enderror" type="file" id="formFile" name="image">
+                        <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image">
                         @error('image')
                             <div class="invalid-feedback">
                             {{ $message }}

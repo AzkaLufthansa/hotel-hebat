@@ -37,8 +37,7 @@
                 <td>{{ $fh->keterangan }}</td>
                 <td>{{ $fh->image }}</td>
                 <td>
-                    <a href="#" class="badge bg-warning text-decoration-none">Ubah</a>
-                    <a href="#" class="badge bg-success text-decoration-none">Lihat</a>
+                    <a href="#" class="badge bg-warning text-decoration-none edit-fasilitas-hotel" data-bs-toggle="modal" data-bs-target="#modalForm" data-id="{{ $fh->id }}">Ubah</a>
                     <form action="/kelola_fasilitas_hotel/{{ $fh->id }}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
@@ -69,7 +68,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tambah Data</h5>
+                <h5 class="modal-title" id="formModalLabel">Tambah Data</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 

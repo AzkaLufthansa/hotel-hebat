@@ -67,9 +67,9 @@ class KamarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Kamar $kelola_kamar)
     {
-        //
+        return $kelola_kamar;
     }
 
     /**

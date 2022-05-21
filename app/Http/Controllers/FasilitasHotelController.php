@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\FasilitasHotel;
 
 class FasilitasHotelController extends Controller
@@ -67,9 +68,9 @@ class FasilitasHotelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(FasilitasHotel $kelola_fasilitas_hotel)
     {
-        //
+        return $kelola_fasilitas_hotel;
     }
 
     /**
@@ -79,9 +80,21 @@ class FasilitasHotelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, FasilitasHotel $kelola_fasilitas_hotel)
     {
-        //
+        $validatedData = $request->validate([
+            'nama_fasilitas' => 'required',
+            'keterangan' => 'required',
+            'image' => 'required|image|file|max:5000'
+        ]);
+
+        Storage::delete($kelola_fasilitas_hotel->image);
+        $validatedData['image'] = $request->file('image')->store('fasilitas-hotel');
+
+        FasilitasHotel::find($kelola_fasilitas_hotel->id)
+                        ->update($validatedData);
+
+        return redirect('/kelola_fasilitas_hotel')->with('success', 'Data berhasil diubah!');
     }
 
     /**
@@ -92,6 +105,7 @@ class FasilitasHotelController extends Controller
      */
     public function destroy(FasilitasHotel $kelola_fasilitas_hotel)
     {
+        Storage::delete($kelola_fasilitas_hotel->image);
         FasilitasHotel::destroy($kelola_fasilitas_hotel->id);
         return redirect('/kelola_fasilitas_hotel')->with('success', 'Data berhasil dihapus!');
     }

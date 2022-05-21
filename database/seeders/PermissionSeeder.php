@@ -42,7 +42,6 @@ class PermissionSeeder extends Seeder
 
          // create demo users
         $user = User::factory()->create([
-            'role_id' => 1,
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('12345678')
@@ -50,7 +49,6 @@ class PermissionSeeder extends Seeder
         $user->assignRole($roleAdmin);
 
         $user = User::factory()->create([
-            'role_id' => 3,
             'name' => 'Tamu',
             'email' => 'tamu@gmail.com',
             'password' => bcrypt('12345678')
@@ -58,7 +56,6 @@ class PermissionSeeder extends Seeder
         $user->assignRole($roleTamu);
 
         $user = User::factory()->create([
-            'role_id' => 2,
             'name' => 'Resepsionis',
             'email' => 'resepsionis@gmail.com',
             'password' => bcrypt('12345678')

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Kamar;
 
 class KamarController extends Controller
@@ -79,9 +80,21 @@ class KamarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Kamar $kelola_kamar)
     {
-        //
+        $validatedData = $request->validate([
+            'tipe_kamar' => 'required',
+            'jumlah_kamar' => 'required|numeric',
+            'image' => 'required|image|file|max:5000'
+        ]);
+
+        Storage::delete($kelola_kamar->image);
+        $validatedData['image'] = $request->file('image')->store('kamar-images');
+
+        Kamar::find($kelola_kamar->id)
+                    ->update($validatedData);
+
+        return redirect('/kelola_kamar')->with('success', 'Data berhasil diubah!');
     }
 
     /**
@@ -92,6 +105,7 @@ class KamarController extends Controller
      */
     public function destroy(Kamar $kelola_kamar)
     {
+        Storage::delete($kelola_kamar->image);
         Kamar::destroy($kelola_kamar->id);
         return redirect('/kelola_kamar')->with('success', 'Data berhasil dihapus!');
     }

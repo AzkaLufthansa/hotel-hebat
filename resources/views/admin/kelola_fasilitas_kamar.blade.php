@@ -10,12 +10,12 @@
     </div>
 @endif
 
-{{-- Jika Data Gagal Ditambahkan --}}
+{{-- Jika Data Gagal Ditambahkan atau diubah --}}
 @if ($errors->any())
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        Tambah data gagal!
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Tambah / ubah data gagal!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 @endif
 
 <div class="table-responsive">
@@ -49,7 +49,7 @@
 
     {{-- Tombol Tambah Data --}}
     <div class="justify-content-end d-flex mt-4">
-        <a href="/kelola_fasilitas_kamar/create" data-bs-toggle="modal" data-bs-target="#modalForm">
+        <a href="/kelola_fasilitas_kamar/create">
             <i class="fa-solid fa-circle-plus fs-1 text-dark"></i>
         </a>
     </div>
@@ -65,11 +65,12 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="formModalLabel"Tambah Data</h5>
+                <h5 class="modal-title" id="formModalLabel">Ubah Data</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form action="/kelola_fasilitas_kamar" method="post">
+            <form action="" method="post">
+                @method('put')
                 @csrf
                 <div class="modal-body">
                     <div class="input-group mb-3">
@@ -91,7 +92,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                    <button type="submit" class="btn btn-primary">Tambah</button>
+                    <button type="submit" class="btn btn-primary">Ubah</button>
                 </div>
             </form>
 

@@ -66,9 +66,9 @@ class FasilitasKamarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(FasilitasKamar $kelola_fasilitas_kamar)
     {
-        //
+        return $kelola_fasilitas_kamar;
     }
 
     /**
@@ -78,9 +78,17 @@ class FasilitasKamarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, FasilitasKamar $kelola_fasilitas_kamar)
     {
-        //
+        $validatedData = $request->validate([
+            'kamar_id' => 'required',
+            'nama_fasilitas' => 'required'
+        ]);
+
+        FasilitasKamar::find($kelola_fasilitas_kamar->id)
+                        ->update($validatedData);
+
+        return redirect('/kelola_fasilitas_kamar')->with('success', 'Data berhasil diubah!');
     }
 
     /**

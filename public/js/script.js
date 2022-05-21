@@ -1,14 +1,8 @@
 $(function() {
-    $('.tombolTambahData').on('click', function() {
-        $('#formModalLabel').html('Tambah Data');
-        $('.modal-footer button[type=submit]').html('Tambah Data');
-    })
-
+    // Modal Edit Kamar
     $('.edit-kamar').on('click', function() {
-        $('#formModalLabel').html('Ubah Data');
-        $('.modal-footer button[type=submit]').html('Ubah Data');
-
         const id = $(this).data('id');  
+        $('.modal-content form').attr('action', '/kelola_kamar/'+id);
         
         $.ajax({
             url: '/kelola_kamar/'+id+'/edit',
@@ -17,49 +11,46 @@ $(function() {
             // dataType: 'json',
             success: function(data) {
                 // console.log(data);
-                $('.modal-content form').attr('action', '/kelola_kamar/'+data.id);
                 $('#tipe_kamar').val(data.tipe_kamar);
                 $('#jumlah_kamar').val(data.jumlah_kamar);
             }
         });
     });
 
+
+    // Modal Fasilitas Kamar
     $('.edit-fasilitas-kamar').on('click', function() {
-        $('#formModalLabel').html('Ubah Data');
-        $('.modal-footer button[type=submit]').html('Ubah Data');
-
         const id = $(this).data('id');  
+        $('.modal-content form').attr('action', '/kelola_fasilitas_kamar/'+id);
         
         $.ajax({
-            url: '/kelola_kamar/'+id+'/edit',
+            url: '/kelola_fasilitas_kamar/'+id+'/edit',
             data: {id : id},
             method: 'GET',
             // dataType: 'json',
             success: function(data) {
                 // console.log(data);
-                $('.modal-content form').attr('action', '/kelola_kamar/'+data.id);
-                $('#tipe_kamar').val(data.tipe_kamar);
-                $('#jumlah_kamar').val(data.jumlah_kamar);
+                $('#kamar_id').val(data.kamar_id);
+                $('#nama_fasilitas').val(data.nama_fasilitas);
             }
         });
     });
 
-    $('.edit-fasilitas-hotel').on('click', function() {
-        $('#formModalLabel').html('Ubah Data');
-        $('.modal-footer button[type=submit]').html('Ubah Data');
 
+    // Modal Fasilitas Hotel
+    $('.edit-fasilitas-hotel').on('click', function() {
         const id = $(this).data('id');  
+        $('.modal-content form').attr('action', '/kelola_fasilitas_hotel/'+id);
         
         $.ajax({
-            url: '/kelola_kamar/'+id+'/edit',
+            url: '/kelola_fasilitas_hotel/'+id+'/edit',
             data: {id : id},
             method: 'GET',
             // dataType: 'json',
             success: function(data) {
                 // console.log(data);
-                $('.modal-content form').attr('action', '/kelola_kamar/'+data.id);
-                $('#tipe_kamar').val(data.tipe_kamar);
-                $('#jumlah_kamar').val(data.jumlah_kamar);
+                $('#nama_fasilitas').val(data.nama_fasilitas);
+                $('#keterangan').val(data.keterangan);
             }
         });
     });

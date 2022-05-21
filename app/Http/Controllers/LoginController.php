@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -24,12 +25,14 @@ class LoginController extends Controller
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            if(auth()->user()->role_id == 3) {
-                return redirect()->intended('/')->with('success_login', 'Anda berhasil login! Selamat datang kembali ' . auth()->user()->name);
-            } else if(auth()->user()->role_id == 2) {
-                return redirect()->intended('/resepsionis')->with('success_login', 'Anda berhasil login! Selamat datang kembali ' . auth()->user()->name);
-            } else if(auth()->user()->role_id == 1) {
-                return redirect()->intended('/kelola_kamar')->with('success_login', 'Anda berhasil login! Selamat datang kembali ' . auth()->user()->name);
+            $user = User::find(auth()->user()->id);
+
+            if($user->hasRole('tamu')) {
+                return redirect()->intended('/')->with('success', 'Anda berhasil login! Selamat datang kembali ' . auth()->user()->name);
+            } else if($user->hasRole('resepsionis')) {
+                return redirect()->intended('/resepsionis')->with('success', 'Anda berhasil login! Selamat datang kembali ' . auth()->user()->name);
+            } else if($user->hasRole('admin')) {
+                return redirect()->intended('/kelola_kamar')->with('success', 'Anda berhasil login! Selamat datang kembali ' . auth()->user()->name);
             }
         }
 

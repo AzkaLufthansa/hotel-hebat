@@ -14,15 +14,9 @@
                 <a class="nav-link {{ Request::is('kelola_fasilitas_hotel') ? 'disabled text-decoration-underline' : '' }}" href="/kelola_fasilitas_hotel">Fasilitas Hotel</a>
             </li>
 
-            @auth
             <li class="nav-item">
-                <a class="nav-link" href="/logout" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                <a class="nav-link" href="/logout" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a>
             </li>
-            @else
-            <li class="nav-item">
-                <a class="nav-link {{ Request::is('login', 'register') ? 'disabled text-decoration-underline' : '' }}" href="/login">Login</a>
-            </li>
-            @endauth
 
         </ul>
     </div>

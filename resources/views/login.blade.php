@@ -42,7 +42,7 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col justify-content-between align-items-center d-flex">
+                                                <div class="col justify-content-between align-items-end d-flex">
                                                     <a href="/register">Belum terdaftar?</a>
                                                     <button type="submit" class="btn btn-primary">Login</button>
                                                 </div>

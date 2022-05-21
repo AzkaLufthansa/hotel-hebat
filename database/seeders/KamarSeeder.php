@@ -18,7 +18,7 @@ class KamarSeeder extends Seeder
         Kamar::create([
             'tipe_kamar' => 'Superior',
             'jumlah_kamar' => 32,
-            'image' => 'kamar-images/4QhV2pZ8L35PlaEIyzLXvkw2Qt9C4PsqunLmFEzx.jpg'
+            'image' => 'kamar-images/NAtOQfDwNslleUG14RxSWBPh0ntSOXoRYcOv5ltv.jpg'
         ]);
 
         Kamar::create([

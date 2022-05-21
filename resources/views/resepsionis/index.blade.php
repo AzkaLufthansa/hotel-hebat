@@ -3,17 +3,9 @@
 @section('container')
 
 {{-- Jika login berhasil --}}
-@if(session()->has('success_login'))
+@if(session()->has('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{ session('success_login') }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-@endif
-
-{{-- Jika konfirmasi berhasil --}}
-@if(session()->has('konfirmasi_berhasil'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{ session('konfirmasi_berhasil') }}
+        {{ session('success') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 @endif

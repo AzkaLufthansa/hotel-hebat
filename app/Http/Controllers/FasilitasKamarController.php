@@ -28,7 +28,9 @@ class FasilitasKamarController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tambah_fasilitas_kamar', [
+            'kamar' => Kamar::all()
+        ]);
     }
 
     /**

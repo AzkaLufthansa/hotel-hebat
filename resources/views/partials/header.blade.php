@@ -27,28 +27,12 @@
         </ul>
     </div>
 
-    {{-- Jika berhasil logout --}}
-    @if(session()->has('success_logout'))
+    {{-- Jika berhasil logout, login, dan memesan --}}
+    @if(session()->has('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('success_logout') }}
+            {{ session('success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    @endif
-
-    {{-- Jika berhasil login --}}
-    @if(session()->has('success_login'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('success_login') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
-
-    {{-- Jika berhasil pesan --}}
-    @if(session()->has('success_booking'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{ session('success_booking') }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
     @endif
 
     {{-- Jika gagal pesan --}}

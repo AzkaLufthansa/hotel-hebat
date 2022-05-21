@@ -27,7 +27,7 @@ class FasilitasHotelController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tambah_fasilitas_hotel');
     }
 
     /**

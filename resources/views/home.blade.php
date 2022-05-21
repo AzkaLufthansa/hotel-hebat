@@ -12,11 +12,6 @@
                         <i class="fa fa-calendar"></i>
                     </span>
                 </span>
-                @error('cek_in')
-                    <div class="invalid-feedback">
-                    {{ $message }}
-                    </div>
-                @enderror
             </div>
         </div>
       
@@ -28,22 +23,12 @@
                         <i class="fa fa-calendar"></i>
                     </span>
                 </span>
-                @error('cek out')
-                    <div class="invalid-feedback">
-                    {{ $message }}
-                    </div>
-                @enderror
             </div>
         </div>
 
         <div class="col-md-2">
             <div class="input-group">
                 <input type="number" id="jml_kamar" name="jml_kamar" class="form-control @error('jml_kamar') is-invalid @enderror" aria-describedby="passwordHelpInline" placeholder="Jumlah Kamar" value="{{ old('jml_kamar') }}">
-                @error('jml_kamar')
-                    <div class="invalid-feedback">
-                    {{ $message }}
-                    </div>
-                @enderror
             </div>
         </div>
       

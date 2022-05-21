@@ -24,6 +24,6 @@ class ResepsionisController extends Controller
         
         $pesanan->update(['status' => 2]);
 
-        return redirect('/resepsionis')->with('konfirmasi_berhasil', 'Pesanan berhasil di konfirmasi!');
+        return redirect('/resepsionis')->with('success', 'Pesanan berhasil di konfirmasi!');
     }
 }

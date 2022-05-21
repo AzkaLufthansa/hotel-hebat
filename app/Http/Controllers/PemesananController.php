@@ -12,16 +12,16 @@ class PemesananController extends Controller
         $validatedData = $request->validate([
             'cek_in' => 'required',
             'cek_out' => 'required',
-            'jml_kamar' => 'required',
+            'jml_kamar' => 'required|numeric',
             'nama_pemesan' => 'required',
-            'email_pemesan' => 'required',
-            'hp_pemesan' => 'required',
+            'email_pemesan' => 'required|email:dns',
+            'hp_pemesan' => 'required|numeric',
             'nama_tamu' => 'required',
             'kamar_id' => 'required'
         ]);
 
         Pesanan::create($validatedData);
 
-        return redirect('/')->with('success_booking', 'Proses pemesanan berhasil!');
+        return redirect('/')->with('success', 'Proses pemesanan berhasil!');
     }
 }

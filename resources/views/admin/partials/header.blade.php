@@ -5,13 +5,13 @@
         {{-- Navigation Bar --}}
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('kelola_kamar') ? 'disabled text-decoration-underline' : '' }}" aria-current="page" href="/kelola_kamar">Kamar</a>
+                <a class="nav-link {{ Request::is('kelola_kamar*') ? 'disabled text-decoration-underline' : '' }}" aria-current="page" href="/kelola_kamar">Kamar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('kelola_fasilitas_kamar') ? 'disabled text-decoration-underline' : '' }}" href="/kelola_fasilitas_kamar">Fasilitas Kamar</a>
+                <a class="nav-link {{ Request::is('kelola_fasilitas_kamar*') ? 'disabled text-decoration-underline' : '' }}" href="/kelola_fasilitas_kamar">Fasilitas Kamar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('kelola_fasilitas_hotel') ? 'disabled text-decoration-underline' : '' }}" href="/kelola_fasilitas_hotel">Fasilitas Hotel</a>
+                <a class="nav-link {{ Request::is('kelola_fasilitas_hotel*') ? 'disabled text-decoration-underline' : '' }}" href="/kelola_fasilitas_hotel">Fasilitas Hotel</a>
             </li>
 
             <li class="nav-item">

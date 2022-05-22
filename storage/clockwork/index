@@ -1117,3 +1117,4 @@
 1653139403-7953-407640777,1653139403.4188,GET,/kelola_fasilitas_hotel,"App\Http\Controllers\FasilitasHotelController@index",200,1116.5580749512,request
 1653139410-8462-163021332,1653139410.3574,POST,/logout,"App\Http\Controllers\LoginController@logout",302,837.94713020325,request
 1653139411-7428-1860011265,1653139411.246,GET,/,"App\Http\Controllers\PageController@index",200,1411.9510650635,request
+1653177832-6846-857670785,1653177828.7334,GET,/,"App\Http\Controllers\PageController@index",200,11944.646835327,request
